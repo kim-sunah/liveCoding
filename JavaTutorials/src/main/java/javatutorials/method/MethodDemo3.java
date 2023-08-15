@@ -1,6 +1,6 @@
 package javatutorials.method;
 
-public class MethodDemo4 {
+public class MethodDemo3 {
     public static void numbering(int limit){
         int i =0;
         while (i<limit){
