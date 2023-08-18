@@ -1,19 +1,19 @@
 package javatutorials.object;
 
 class Calculator {
-    int left, rigit;
+    int left, right;
 
     public void setOprands(int left, int right) {
         this.left = left;
-        this.rigit = right;
+        this.right = right;
     }
 
     public void avg() {
-        System.out.println((this.left + this.rigit) / 2);
+        System.out.println((this.left + this.right) / 2);
     }
 
     public void sum() {
-        System.out.println(this.left + this.rigit);
+        System.out.println(this.left + this.right);
     }
 }
 
