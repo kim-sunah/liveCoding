@@ -22,7 +22,5 @@ public class ClaculatorDemo2 {
 
     private static void sum(int left, int right) {
         System.out.println(left+right);
-
-
     }
 }
