@@ -10,6 +10,10 @@ public class OverloadingDemo {
         System.out.println("void A(int arg1)");
     }
 
+//    void A(int arg2) {
+//        System.out.println("void A(int arg1)");
+//    }
+
     void A(String arg1) {
         System.out.println("void A (String arg1)");
     }
