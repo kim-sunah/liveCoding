@@ -22,7 +22,7 @@ class Calculator {
  * TODO
  * extends = 확장
  */
-class SubstractionableCalculator extends Calculator{
+class SubstractionableCalculator extends Calculator {
         public void substract(){
               System.out.println(this.left - this.right);
         }
