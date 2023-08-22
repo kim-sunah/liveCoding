@@ -1,4 +1,4 @@
-package packages.example2;
+package javatutorials.packages.example2;
 
 import javatutorials.packages.example1.A;
 
