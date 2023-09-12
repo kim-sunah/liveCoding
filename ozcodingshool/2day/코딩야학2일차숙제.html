@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 양식</title>
+</head>
+
+<body>
+    <header>
+        <h1>설문조사 양식</h1>
+        <p>모든 항목에 빠짐없이 체크해주십시오</p>
+    </header>
+    <hr>
+    <main>
+        <form>
+            <fieldset>
+                <legend>개인정보</legend>
+                <label for="name">이름</label>
+                <input type="text" placeholder="본명을 입력하세요" id="name" name="name">
+                <br>
+                <label for="email">이메일</label>
+                <input type="email" id="email" placeholder="메일 주소 쓰세요"name="email">
+            </fieldset>
+            <fieldset>
+                <legend>설문</legend>
+                <p>연령대가 어떻게 되십니까?</p>
+                <input type="radio" value="10" checked name="age"><label for="10">10대</label>
+                <input type="radio" value="20" name="age"><label for="20">20대</label>
+                <input type="radio" value="30" name="age"><label for="30">30대</label>
+                <input type="radio" value="40" name="age"><label for="40">40대</label>
+                <input type="radio" value="50" name="age"><label for="50">50대</label>
+                <input type="radio" value="other" name="age"><label for="other">그외</label>
+                <p>학원을 선택할 때 가장 중요하게 생각하는것은 무엇입니까? 모두 고르시오</p>
+                <input type="checkbox" name="academy" id="position"><label for="position">위치</label>
+                <input type="checkbox" name="academy" id="price"><label for="price">학원비</label>
+                <input type="checkbox" name="academy" id="teacher"><label for="teacher">강사</label>
+                <input type="checkbox" name="academy" id="infra"><label for="infra">시설</label>
+                
+                <p>본인의 한달 수입이 어떻게 되십니까?</p>
+                <input type="radio" value="200" checked name="money"><label for="200">200</label>
+                <input type="radio" value="300" name="money"><label for="300">300</label>
+                <input type="radio" value="400" name="money"><label for="400">400</label>
+                <input type="radio" value="500" name="money"><label for="500">500</label>
+                <input type="radio" value="600" name="money"><label for="600">600</label>
+                <input type="radio" value="other" name="money"><label for="other">그외</label>
+            </fieldset>
+            <fieldset>
+                <legend>기타의견</legend>
+                <textarea rows="10" cols="70"name="comment"></textarea>
+            </fieldset>
+            <input type="submit">
+        </form>
+    </main>
+    <hr>
+    <footer>
+        <p>입력하느라 수고하셨습니다.</p>
+    </footer>
+</body>
+
+</html>
