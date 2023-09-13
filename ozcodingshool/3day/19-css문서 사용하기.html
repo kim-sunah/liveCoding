@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        color: red;
+    }
+    /*
+    선택자 우선순위 : 쓰여진 순서랑 상관없이 적용되는 순위
+    1. id 선택자
+    2. class 선택자
+    3. 태그 선택자
+    */
+    li{
+        background-color: darkgray;
+        color: blue;
+    }
+    li.hippop{
+        color:green;
+    }
+    #belly{
+        color:orange;
+    }
+    h2, p, li{
+        background-color:aqua
+    }
+</style>
+<body>
+    <ul>
+        <li class="hippop">비보잉</li>
+        <li class="hippop" id = "popbin">팝핀</li>
+        <li class="hippop">락킹</li>
+        <li class="hippop" id = "belly">벨리</li>
+        <li class="hippop" id="jazz">재즈</li>
+    </ul>
+</body>
+
+</html>

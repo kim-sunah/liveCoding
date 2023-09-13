@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경을 깔아보자</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 20px double green;
+            background-image: url("https://imgscience.ytn.co.kr/sciencetv/jpg/vod0082/2023/202309131608253953_h.jpg");
+            background-size: 300px 300px;
+            /* background-repeat: repeat; 
+            기본값
+            반복된다!*/
+            /* background-repeat: repeat-x; 
+            가로로만 반복 
+            y = 세로로만 반복*/
+            background-repeat: no-repeat;
+
+            background-origin: border-box;
+            /* background-origin: 
+            content-box 컨텐츠에서 시작
+
+            */
+            background-position: center;
+
+            /* background-clip: border-box
+            기본사항
+            경계선까지 적용 */
+            /* background-clip: padding-box
+            패딩영역까지 적용
+            */
+            /* background-clip: content-box
+            콘텐츠 영역에서만 표시 */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

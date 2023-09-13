@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            % : 내가 속한 영역을 기준으로 백분율 계산
+            height - %가 먹히지 않음
+            => 내가 속한 영역에 관련 값이 있어야 적용 가능!
+        */
+        .red{
+           border-width: 5px;
+           border-style: solid;
+           border-color: red;
+        }
+        .green{
+            /*단축 속성은 공백으로 속성값을 서로 구분 */
+            border: 3px solid green;
+
+            border-radius: 20px 30px 40px 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="red">red</p>
+    <p class="area green">에어리어</p>
+    
+</body>
+</html>

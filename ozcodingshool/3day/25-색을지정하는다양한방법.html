@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색깔을 지정하는 다양한 방법</title>
+    <style>
+        p#one {
+            /*rgb = 빛의 3원색*/
+            color : rgb(100%, 0%, 0%);
+            opacity: 0.3;
+        }
+        p#two{
+            /*
+            a = 0~1 사이의 투명도
+            */
+            color: rgba(100%, 0%, 0%, 0.5);
+        }
+        p#three{
+            color: hsla(300, 50%, 70%,0.3);
+        }
+        p#four{
+            color: #ff00ff50;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="one">모닝</p>
+    <p id="two">모닝</p>
+    <p id="three">모닝</p>
+    <p id="four">모닝</p>
+
+</body>
+
+</html>
