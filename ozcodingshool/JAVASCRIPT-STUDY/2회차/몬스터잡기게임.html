@@ -28,7 +28,12 @@
                 container.append(p)
 
                 const strong = document.createElement("strong");
+                if(monsterHP<=0){
+                    strong.textContent = `몬스터의 남은 hp는 0입니다!`
+                }else{
+
                 strong.textContent = `몬스터의 남은 hp는 ${monsterHP}입니다!`
+                }
                 container.append(strong)
             }
             const h2 = document.createElement("h2")
