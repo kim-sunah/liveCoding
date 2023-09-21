@@ -1,11 +1,72 @@
-import {createServer} from 'http';
+import express, { json } from 'express';
+import path from 'path';
+import nunjucks from 'nunjucks';
+import bodyParser from 'body-parser';
+import fs from 'fs';
 
-const server = createServer((req,res)=>{
-    res.writeHead(200,{'Content-Type': 'text/plain'});
-    res.write('hello node.js');
-    res.end();
+const __dirname = path.resolve();
+
+const app = express();
+
+//file path
+const filePath = path.join(__dirname,'data','writing.json');
+
+// body parser set
+app.use(bodyParser.urlencoded({ extended: false })); // express 기본 모듈 사용
+app.use(bodyParser.json());
+
+// view engine set
+app.set('view engine', 'html'); // main.html -> main(.html)
+
+// nunjucks
+nunjucks.configure('views', {
+    watch: true, // html 파일이 수정될 경우, 다시 반영 후 렌더링
+    express: app
+})
+
+// middleware
+// main page GET
+app.get('/', async (req, res) => {
+    const fileData = fs.readFileSync(filePath);
+    const writings =JSON.parse(fileData);
+    console.log(writings)
+    res.render('main',{list:writings});
 });
 
-server.listen(3000,()=>{
-    console.log('server is listening on port 3000');
+app.get('/write', (req, res) => {
+    res.render('write');
+});
+
+app.post('/write', async (req, res) => {
+    const title = req.body.title;
+    const contents = req.body.contents;
+    const date = req.body.date;
+
+    //데이터 저장
+    //data/writing.json 안에 글 내용이 저장
+    const fileData = fs.readFileSync(filePath);
+    // console.log(fileData)
+
+    const writings = JSON.parse(fileData);
+    // console.log(writings)
+
+    //requst 데이터를 저장
+    writings.push({
+        'title':title,
+        'contents':contents,
+        'date': date
+    })
+
+    //data/wrigint.json 에 저장하기
+    fs.writeFileSync(filePath,JSON.stringify(writings))
+
+    res.render('detail', { 'detail': { title: title, contents: contents, date: date } });
+});
+
+app.get('/detail', async (req, res) => {
+    res.render('detail');
 })
+
+app.listen(3000, () => {
+    console.log('Server is running');
+});
