@@ -24,6 +24,20 @@ nunjucks.configure('views', {
     express: app
 })
 
+//mysql 연결
+// const mysql      = require('mysql');
+import * as mysql from 'mysql';
+const connection = mysql.createConnection({
+  host     : 'sparta.cbt9ceqjwlr9.ap-northeast-2.rds.amazonaws.com',
+  user     : 'sparta_student',
+  password : 'sparta99',
+  database : 'sparta'
+});
+
+connection.connect();
+
+connection.end();
+
 // middleware
 // main page GET
 app.get('/', async (req, res) => {
