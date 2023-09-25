@@ -26,6 +26,21 @@
         hobbyId.textContent = `취미는 ${hobby} 입니다`;
         document.querySelector("#fruit").textContent = `좋아하는 과일은 ${prompt("좋아하는 과일은?")} 입니다`  ;
 
+        const s = "{}{}{}"
+var isValid = function(s) {
+    
+    s.replace('()', '');
+    s.replace('{}', '');
+    s.replace('[]', '');
+
+    // return s;
+    if(s.length==0){
+        return true
+    }else{
+        return false;
+    }
+};
+
     </script>
 </body>
 
