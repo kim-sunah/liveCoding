@@ -1,7 +1,7 @@
 const apiRandomDogs = "https://dog.ceo/api/breeds/image/random/42"
 const apiAllBreeds = "https://dog.ceo/api/breeds/list/all"
-const request1 = new XMLHttpRequest()
-const request2 = new XMLHttpRequest()
+var request1 = new XMLHttpRequest()
+var request2 = new XMLHttpRequest()
 
 const header = document.getElementById("header")
 const main = document.getElementById("main")
@@ -12,7 +12,7 @@ const more = document.getElementById("more")
 const tothetop = document.getElementById("tothetop")
 const reset = document.getElementById("reset");
 
-const currentDogs = []
+var currentDogs = []
 
 function displayDogs(item) {
     const dogImgDiv = document.createElement("div")
@@ -23,16 +23,18 @@ function displayDogs(item) {
     main.appendChild(dogImgDiv)
 }
 
-function getList(){
+function getList() {
 
     // 강아지 사진 뿌리기
     request1.open("GET", apiRandomDogs)
     request1.addEventListener("load", function () {
+
         const response = JSON.parse(request1.response)
         response.message.forEach(function (item) {
             currentDogs.push(item)
             displayDogs(item)
         });
+
     })
     request1.send()
 
@@ -57,9 +59,14 @@ window.addEventListener("load", function () {
 //새 사진 불러오기
 reset.addEventListener("click", function () {
     // location.reload();
-    main.innerHTML=""
+    main.innerHTML = ""
+    currentDogs.splice(0,currentDogs.length);
+     request1 = new XMLHttpRequest()
+     request2 = new XMLHttpRequest()
+    // request1.splice(0,currentDogs.length)
+    // request2.splice(0,currentDogs.length)
+    // currentDogs.dele;
     getList()
-
 })
 
 button.addEventListener("click", function () {
